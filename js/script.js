@@ -69,10 +69,10 @@ function buttonOnClick() {
 function updateScore() {
 	
 	
-  var current_scores = localStorage.getItem('score');
-  console.log(current_scor);
+  var current_score = localStorage.getItem('score');
+  console.log(current_score);
   if (isNaN(current_score)) {
-    localStorage.setItem('score', 0);
+    localStorage.setItem('score', score);
     document.getElementById("SCORE").innerHTML = " [ " + current_score + " ] ";
   } else {
     localStorage.setItem('score', parseInt(current_score) + 1);
@@ -195,10 +195,7 @@ function input(event) {
     }
     // console.log("Gamer Input :" + gamerInput.action);
 }
-document.getElementById("wButton").onmouseup = function() {buttonUp()};
-document.getElementById("aButton").onmouseup = function() {buttonUp()};
-document.getElementById("dButton").onmouseup = function() {buttonUp()};
-document.getElementById("sButton").onmouseop = function() {buttonUp()}
+
 
 
 
@@ -206,22 +203,26 @@ function moveRight()
 {
 	gamerInput = new GamerInput ("Right");
 	score = score +1;
+	buttonOnClick()
 	audio.play();
-	updateScore();
+
+
 }
 function moveLeft()
 {	
 	gamerInput = new GamerInput ("Left");
 	score = score +1;
+	buttonOnClick()
 	audio.play();
-	updateScore();
+
+
 }
 function moveUp()
 {
 	gamerInput = new GamerInput ("Up");
 	score = score +1;
 	audio.play();
-	updateScore();
+
 }
 
 function moveDown()
@@ -229,7 +230,7 @@ function moveDown()
 	gamerInput = new GamerInput ("Down");
 	score = score +1;
 	audio.play();
-	updateScore();
+	
 }
 function ButtonUp()
 {
