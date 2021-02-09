@@ -222,6 +222,7 @@ function moveUp()
 	gamerInput = new GamerInput ("Up");
 	score = score +1;
 	audio.play();
+	buttonOnClick()
 
 }
 
@@ -230,6 +231,7 @@ function moveDown()
 	gamerInput = new GamerInput ("Down");
 	score = score +1;
 	audio.play();
+	buttonOnClick()
 	
 }
 function ButtonUp()
